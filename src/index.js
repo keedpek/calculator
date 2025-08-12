@@ -158,8 +158,6 @@ equalBtn.addEventListener('click', () => {
 
 document.addEventListener('keydown', (e) => {
   const key = e.key
-  let a = 2
-  console.log()
   const digitRegEx = /^[0-9]$/
   if (digitRegEx.test(key) || key === '.') {
     writeNumber(key)
