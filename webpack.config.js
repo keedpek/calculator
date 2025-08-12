@@ -1,9 +1,13 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+import path from 'path'
+import { fileURLToPath } from 'url'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+export default {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
