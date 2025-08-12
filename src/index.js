@@ -64,12 +64,9 @@ function writeOperation(op) {
 }
 
 function calculate() {
-  console.log(calculator)
   let result
   const prev = parseFloat(calculator.previousNumber)
   const current = parseFloat(calculator.currentNumber)
-  console.log(`prev ${prev}`)
-  console.log(`current ${current}`)
   if ((!prev || !current) && prev !== 0 && current !== 0) return
   switch (calculator.operation) {
     case '+':
@@ -85,7 +82,6 @@ function calculate() {
       result = division(prev, current)
       break
   }
-  console.log(`result ${result}`)
 
   calculator.previousNumber = ''
   calculator.operation = null
@@ -162,6 +158,7 @@ equalBtn.addEventListener('click', () => {
 
 document.addEventListener('keydown', (e) => {
   const key = e.key
+  let a = 2
   const digitRegEx = /^[0-9]$/
   if (digitRegEx.test(key) || key === '.') {
     writeNumber(key)
@@ -194,5 +191,4 @@ document.addEventListener('keydown', (e) => {
       break
   }
   renderDisplay()
-  console.log(calculator)
 })
