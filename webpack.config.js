@@ -24,7 +24,7 @@ module.exports = {
     ],
   },
   devServer: {
-    hot: true,
+    port: 3000,
   },
   optimization: {
     minimize: true,
