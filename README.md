@@ -24,4 +24,12 @@ npm run build
 ```
 Outputs to /dist folder. Contains index.html and bundle.js
 
+## Project structure
 
+- .husky/ - Git hooks configuration
+- src/ - Application source code
+- dist/ (auto-generated) - Production build
+- .eslintrc.json - ESLint rules and settings
+- .prettierrc - Code formatting preferences
+- webpack.config.js - Bundler configuration
+- package.json - Project metadata and npm scripts
