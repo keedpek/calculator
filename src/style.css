@@ -53,9 +53,8 @@
   flex-direction: column;
   position: relative;
   align-items: flex-end;
-  justify-content: flex-end;
-  gap: 5px;
-  padding: 0px 20px;
+  justify-content: space-between;
+  padding: 5px 20px;
   height: 100px;
   width: 100%;
   color: var(--display-text);
@@ -65,14 +64,14 @@
 }
 
 .previous {
-  font-size: 14px;
+  font-size: 2rem;
   line-height: 100%;
 }
 
 .current {
-  font-size: 62px;
+  font-size: 4rem;
   line-height: 100%;
-  height: 62px;
+  height: 4rem;
 }
 
 .circles {
@@ -108,7 +107,7 @@
   background-color: var(--key-bg);
   border: 1px solid var(--key-border);
   color: var(--key-text);
-  font-size: 26px;
+  font-size: 2rem;
   outline: none;
   cursor: pointer;
 }
@@ -139,4 +138,50 @@
   border: none;
   font-size: 32px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .display {
+    padding: 10px 20px;
+  }
+
+  .calculator {
+    width: 380px;
+  }
+
+  .keyboard {
+    grid-template: repeat(5, 70px) / repeat(4, 1fr);
+  }
+
+  .theme-toggle {
+    top: 20px;
+    left: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 8px;
+  }
+
+  .display {
+    padding: 10px 20px;
+  }
+
+  .calculator {
+    width: 280px;
+  }
+
+  .keyboard {
+    grid-template: repeat(5, 50px) / repeat(4, 1fr);
+  }
+
+  .theme-toggle {
+    top: 20px;
+    left: 40px;
+  }
 }
