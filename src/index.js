@@ -1,10 +1,13 @@
 import './style.css'
+import ThemeManager from './ThemeManager.js'
 const previousNumberHtml = document.querySelector('.previous')
 const currentNumberHtml = document.querySelector('.current')
 const numberBtns = document.querySelectorAll('[data-number]')
 const operationBtns = document.querySelectorAll('[data-operations]')
 const allClearBtn = document.getElementById('clear')
 const equalBtn = document.getElementById('equal')
+
+new ThemeManager()
 
 const calculator = {
   previousNumber: '',

@@ -4,11 +4,39 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-background-color: #fff;
+  --display-bg: #535353;
+  --display-text: #ffffff;
+  --key-bg: #7d7d7d;
+  --key-border: #585858;
+  --key-text: #ffffff;
+  --top-row-bg: #646464;
+  --operator-bg: #ff9f0a;
+  --circle-red: #ff6347;
+  --circle-yellow: #ffbc2e;
+  --circle-green: #24cb42;
+  --shadow-color: #000000be;
+}
+
+[data-theme='dark'] {
+  --main-background-color: #333;
+  --display-bg: #222222;
+  --display-text: #c9c9c9;
+  --key-bg: #373737;
+  --key-border: #111111;
+  --key-text: #c9c9c9;
+  --top-row-bg: #2b2b2b;
+  --operator-bg: #bc7100;
+  --shadow-color: rgba(0, 0, 0, 0.9);
+}
+
 .container {
   height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--main-background-color);
 }
 
 .calculator {
@@ -17,7 +45,7 @@
   border: 1px solid #000;
   border-radius: 10px;
   width: 500px;
-  box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.744);
+  box-shadow: 0px 30px 50px var(--shadow-color);
 }
 
 .display {
@@ -30,8 +58,8 @@
   padding: 0px 20px;
   height: 100px;
   width: 100%;
-  color: #fff;
-  background-color: #535353;
+  color: var(--display-text);
+  background-color: var(--display-bg);
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
@@ -62,13 +90,13 @@
 }
 
 .red {
-  background-color: #ff6347;
+  background-color: var(--circle-red);
 }
 .yellow {
-  background-color: #ffbc2e;
+  background-color: var(--circle-yellow);
 }
 .green {
-  background-color: #24cb42;
+  background-color: var(--circle-green);
 }
 
 .keyboard {
@@ -77,21 +105,21 @@
 }
 
 .keyboard button {
-  background-color: #7d7d7d;
-  border: 1px solid #585858;
-  color: #fff;
+  background-color: var(--key-bg);
+  border: 1px solid var(--key-border);
+  color: var(--key-text);
   font-size: 26px;
   outline: none;
   cursor: pointer;
 }
 
 .keyboard button:nth-child(-n + 4) {
-  background-color: #646464;
+  background-color: var(--top-row-bg);
 }
 
 .keyboard button:nth-child(4n),
 .keyboard button:last-child {
-  background-color: #ff9f0a;
+  background-color: var(--operator-bg);
 }
 
 .two-span {
@@ -101,4 +129,14 @@
 
 #equal {
   border-radius: 0 0 10px 0;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
 }
